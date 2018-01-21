@@ -1,0 +1,333 @@
+/*Skapad av Armando von Gohren (arvo1600)*/
+
+/*Body*/
+body {
+    font-size:18px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding:0;
+    margin:0;
+    min-width:350px;
+}
+
+.Qty:hover, button:hover {
+    cursor:pointer;
+}
+
+/*Sidhuvudet*/
+header{
+    width:100%;
+    height:80px;
+    background-color:white;
+    color:black;
+    text-align:center;
+}
+
+header h1{
+    margin:30px auto 10px auto;
+}
+
+header a{
+    color:black;
+    
+}
+
+header a:hover {
+    cursor:pointer;
+    text-decoration:none;
+}
+
+/*Sidfoten*/
+footer{
+    margin:0 auto;
+    width:90%;
+    height:150px;
+    padding-top:20px;
+}
+
+footer .b{
+    width:100%;
+    padding-top:20px;
+}
+
+/*Navigationen*/
+nav{
+    background-color:white;
+    width:50%;
+    margin:0 auto;
+    padding:20px 0;
+}
+
+.border-right{
+    border-right:1px solid black;
+}
+
+@media screen and (max-width: 780px) {
+    .border-right {
+       border:none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    nav {
+       width:100%;
+    }
+}
+
+nav ul {
+    color:black;
+    list-style: none;
+    margin:0 auto;
+    text-align:center;
+    width:100%;
+}
+
+nav li {
+    margin:10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color:black;
+}
+
+/*Container*/
+.container-fluid {
+    padding:50px 150px;
+    background-color: #E8E8E8;
+}
+/*texten på startsidan*/
+.infoStart {
+    text-align:center;
+}
+
+/*Products*/
+.products {
+    text-align:center;
+}
+
+figure {
+    max-width:100%;
+    max-height:100%;
+}
+
+figure img {
+    height:200px;
+    max-width:100%;
+}
+
+.products figcaption {
+    text-align: left;
+    
+}
+
+.products figcaption button {
+    float:right;
+    width:100%;
+    margin-top:10px;
+}
+
+/*Varukorgen*/
+.Qty {
+    padding:0 5px 2px 5px;
+    border-radius:4px;
+    text-align:center;
+    margin:0 5px;
+}
+
+
+
+.productImage{
+    max-width:110px;
+    margin-right:20px;
+}
+
+.minus{
+    padding:0 8px 2px 8px;
+}
+
+.cart h2{
+    font-weight:bold;
+}
+.table {
+    background-color:white;
+    border-radius:5px;
+    width:90%;
+    max-width:220px;
+}
+
+.alignCenter{
+    vertical-align: middle !important;
+}
+
+
+
+/*Upload page*/
+.uploadPage input, .uploadPage button, .uploadPage textarea{
+    display:block;
+    width:100%;
+}
+
+.uploadPage .checkbox, label{
+    display:inline;
+}
+
+.uploadPage .newOrUpdate{
+    width:45%;
+    margin-top:15px;
+    font-size:12pt;
+    display:inline-block;
+}
+
+.newProductDiv{
+    min-height:100vh;
+}
+
+.buttons {
+    text-align:center;
+    width:100%;
+    overflow:auto;
+}
+
+.newBTN {
+    float:left;   
+    margin-bottom:20px;
+}
+
+.upBTN {
+    float:right;
+    margin-bottom:20px;
+}
+
+.newProductDiv h2{
+    font-size:20px;
+}
+
+.newProductDiv input{
+    margin-bottom:10px;
+}
+
+.productsDiv{
+    height:100%;
+}
+
+.existingProducts{
+    display:inline-block;
+    width:160px;
+    height:100%;
+    margin:15px;
+    text-align: left;   
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+    padding: 10px 10px 0 10px; 
+}
+
+.existingProducts button{
+    margin-top:10px;
+}
+
+.errormsg {
+    font-size:12pt;
+}
+
+/*Login form*/
+.loginForm input, .loginForm button {
+    display:block;
+    width:100%;
+}
+
+/*Media-screens*/
+@media screen and (max-width:358px){
+    .newProductDiv{
+        min-height:100%;
+    }
+    .table{       
+        font-size:8px !important;
+    }
+    .existingProducts{
+        width:120px !important;
+        font-size:8px;
+    }
+}
+
+@media screen and (max-width:400px){
+    .existingProducts{
+        width:140px;
+        font-size:10px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .table{
+        font-size:12px;
+        max-width:700px;
+    }
+    .container-fluid {
+        padding:50px 10px;
+        background-color: #E8E8E8;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .table{
+        font-size:12px;
+        max-width:600px;
+    }
+    .container-fluid {
+        padding:50px 30px;
+        background-color: #E8E8E8;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    .table{
+        font-size:8px;
+        min-width:80%;
+    }
+    .table .clearCart, .table .checkout{
+        width:100%;
+        font-size:8px !important;
+    }
+    .container-fluid {
+        padding:50px 10px;
+        background-color: #E8E8E8;
+    }
+    .productImage{
+        width:60px;
+        margin-right:2px;
+        display:block;
+    }
+    .Qty {
+        padding:0 2px 2px 2px;
+        border-radius:4px;
+        text-align:center;
+        margin:0;
+    }
+}
+/*
+Bildspelet, hämtad från https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/
+*/
+.figure {
+    margin: 20px auto; 
+    position: relative; 
+    max-width: 240px; 
+    height: 90%; 
+    padding: 10px; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+  }
+
+  #slideshow {
+    margin: 50px auto; 
+    position: relative; 
+    height: 260px; 
+    padding: 10px;
+  }
+  
+  #slideshow > div {
+    position: absolute;    
+    height:auto;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    text-align:center;
+    background-color:#E8E8E8;
+  }

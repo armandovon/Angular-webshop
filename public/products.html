@@ -1,0 +1,29 @@
+<!--Navigationen-->
+<nav>
+    <div>
+        <ul class="row">
+            <li class="col-md-4 border-right"><a href="#/">Home</a></li>
+            <li class="col-md-4 border-right"><a href="#/products">Products</a></li>
+            <li class="col-md-4"><a href="#/cart"><img src="img/cart.png" alt="Cart" title="Cart"  /><span data-ng-repeat="tp in totalProducts" style="color:green"> {{tp.sum}}</span></a></li>
+        </ul>
+    </div>
+</nav><!--Slut navigationen-->
+
+<!--Container för sidornas innehåll-->
+<article class = "container-fluid">
+<div class="row">
+    <div class = "col-md-3 products" data-ng-repeat = "p in products">
+        <figure class="figure">
+            <img data-ng-src="{{p.url}}" src="#" class="figure-img  rounded" style="max-height:100%;"  alt="{{p.name}}" />
+            <figcaption class="figure-caption">
+                    <span>Name: {{p.name}}</span>
+                    <br />
+                    <span>Price: {{p.price}} $</span>
+                    <button data-ng-click = "addInCart(p.id, p.name, p.price, p.url)" class="btn btn-primary">Buy</button>
+            </figcaption>
+            
+        </figure>
+        
+    </div>
+</div>
+</article><!--slut container-->

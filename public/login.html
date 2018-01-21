@@ -1,0 +1,17 @@
+<!--Container för login sidan-->
+<article class = "container-fluid cart">
+
+    <div class="row justify-content-center">
+        <form class="col-md-4 loginForm">
+                <div class="alert-danger errormsg" role="alert">{{error}}</div>
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username" data-ng-model="username" />
+            
+                <label for="password">Password: </label>
+                <input type="text" name="password" id="password" data-ng-model="password"/>
+            
+                <button data-ng-click="login(username, password);" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+
+</article><!--Slut container-->

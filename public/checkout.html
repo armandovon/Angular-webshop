@@ -1,0 +1,40 @@
+<!--Navigationen-->
+<nav>
+    <div>
+        <ul class="row">
+            <li class="col-md-4 border-right"><a href="#/">Home</a></li>
+            <li class="col-md-4 border-right"><a href="#/products">Products</a></li>
+            <li class="col-md-4"><a href="#/cart"><img src="img/cart.png" alt="Cart" title="Cart"  /><span data-ng-repeat="tp in totalProducts" style="color:green">0</span></a></li>
+        </ul>
+    </div>
+</nav><!--Slut navigationen-->
+
+<!--Container-->
+<article class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3>Ordered products</h3>
+            <br />
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                </tr>
+                <tr data-ng-repeat="p in cart">
+                    <td><img data-ng-src="{{p.url}}" src="#" style="width:100px;margin-right:20px;"  alt="{{p.name}}" />{{p.name}}</td>
+                    <td class="alignCenter">{{p.price}} $</td>
+                    <td class="alignCenter">{{p.sum}}</td>
+                </tr>
+                <tr>
+                    <td></td>                    
+                    <td><strong>Total:</strong></td>
+                    <td><strong>{{totalPrice}} $</strong></td>
+                
+                </tr>
+            </table>
+            <br />
+            <a href="#/products" class="btn btn-primary">Back to products</a>
+        </div>
+    </div>
+</article>

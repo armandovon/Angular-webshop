@@ -1,0 +1,27 @@
+<!--Navigationen-->
+<nav>
+        <div>
+            <ul class="row">
+                <li class="col-md-4 border-right"><a href="#/">Home</a></li>
+                <li class="col-md-4 border-right"><a href="#/products">Products</a></li>
+                <li class="col-md-4"><a href="#/cart"><img src="img/cart.png" alt="Cart" title="Cart" /><span data-ng-repeat="tp in totalProducts" style="color:green"> {{tp.sum}}</span></a></li>
+            </ul>
+        </div>
+    </nav><!--Slut navigationen-->
+
+<!--Container för sidornas innehåll-->
+<article class = "container-fluid">
+ <!--Bildspel med tre stycken bilder-->
+<div id = "slideshow" class = "col-md-8">
+    <div data-ng-repeat = "p in products | limitTo:3">
+        <img data-ng-src="{{p.url}}" src="#" style="max-width:100%; max-height:100%" alt="{{p.name}}" />
+    </div>
+</div>
+
+<!--Info om webshopen-->
+<div class = "col-md-12 infoStart">
+    <h1>Webshop</h1>
+    <p>Here at webshop we sale fine art!</p>
+    <p>Click one of the images above or visit our product-page for more products</p>
+</div>
+</article><!--slut container-->

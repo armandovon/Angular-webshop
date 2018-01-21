@@ -1,0 +1,91 @@
+        <!--Navigationen-->
+        <nav style="text-align:right;width:90%;">
+            <button data-ng-click="logout();" class="btn btn-danger">Logout</button>
+        </nav><!--Slut navigationen-->
+        <!--Container för sidornas innehåll-->
+        <article class = "container-fluid uploadPage">
+                <div class="row">
+                        <div class="col-md-3 newProductDiv">
+
+                                <div class="buttons">
+                                        <button data-ng-click="showme=false" class="newOrUpdate btn newBTN">New</button>
+                                        <button data-ng-click="showme=true" class="newOrUpdate btn upBTN">Update</button>          
+                                </div>
+
+                                <div data-ng-show="uploading" class="progress">
+                                        <div class="progress-bar progress-bar-striped active" role="progressbar"
+                                        aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+                                        <span class="sr-only"></span>
+                                        </div>
+                                </div>
+
+                                <!--Formulär för att ändra en befintlig produkt-->
+                                <div data-ng-show="showme">
+                                        <h2>Old Product</h2>
+                                        <form data-ng-submit="updateProduct(productID, productName, productPrice);" class="newProductForm"> 
+                                                <div class="alert-warning errormsg" role="alert">{{error}}</div>
+                                                <label for="newID">ID</label>                                              
+                                                <input type="text" id="newID" data-ng-model="productID" placeholder="Product id..." />
+
+                                                <label for="newName">Name</label>  
+                                                <input type="text" id="newName" data-ng-model="productName" placeholder="Product name..." />
+
+                                                <label for="newPrice">Price</label>  
+                                                <input type="number" id="newPrice" data-ng-model="productPrice" placeholder="Product price..." />
+
+                                                <button class="btn btn-primary" data-ng-disabled="uploading">Update</button>
+                                        </form>
+                                                
+                                        <div data-ng-show="message">
+                                                <div data-ng-class="alert">{{message}}</div>
+                                        </div>
+                                </div>
+
+                                <!--Formulär för att lägga till en produkt-->
+                                <div data-ng-hide="showme">
+                                        <h2>New product</h2>
+                                        <form data-ng-submit="Submit(productName, productPrice);" class="newProductForm">
+                                                <label class="btn btn-success" style="width:100%;">
+                                                Browse
+                                                <input type="file" data-file-model="file.upload" name="myfile" data-ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged(this.files)">
+                                                </label>
+                                                <br />
+                                                <img src="#" data-ng-src="{{thumbnail.dataUrl || 'http://www.shonephotography.com/wp-content/themes/trend/assets/img/empty/424x500.png'}}" style="width:100%;" alt="thumbnail" />
+                                                
+                                                <div class="alert-warning errormsg" role="alert">{{error}}</div>
+                                                
+                                                <label for="pName">Name</label>
+                                                <input type="text" id="pName" data-ng-model="productName" placeholder="Product name..." />
+                                                
+                                                <label for="pPrice">Price</label>
+                                                <input type="number" id="pPrice" data-ng-model="productPrice" placeholder="Product price..." />
+                                                
+                                                <button class="btn btn-primary" data-ng-disabled="uploading">Upload</button>
+                                        </form>
+                                        
+                                        <div data-ng-show="message">
+                                                <div data-ng-class="alert">{{message}}</div>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <!--Visar befintliga produkter tillsammans med en delete-knapp-->
+                        <div class = "col-md-9 productsDiv" data-ng-controller="adminController">
+
+                                <div data-ng-repeat = "p in products" class="existingProducts">
+                                        <figure class="figure-caption">
+                                                <img data-ng-src="../{{p.url}}" src="#" class="figure-img  rounded" style="max-height:75px;"/>
+                                                <figcaption class="figure-caption">
+                                                <span>ID: {{p.id}}</span>
+                                                <br />
+                                                <span>Name: {{p.name}}</span>
+                                                <br />
+                                                <span>Price: {{p.price}}</span>
+                                                <button data-ng-click = "deleteProduct(p.id, p.url)" class="btn btn-danger">Delete</button>
+                                                </figcaption>
+                                        </figure>
+                                </div>
+                                
+                        </div>
+                </div>               
+        </article><!--slut container-->
