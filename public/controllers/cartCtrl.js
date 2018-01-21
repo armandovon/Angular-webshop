@@ -8,12 +8,17 @@ app.controller('cartCtrl', ['$scope', '$http', '$location', '$timeout', function
            $scope.sum = 1;
            $scope.total = 0;
            $scope.totalProducts = [{sum:0}];
-           $scope.TP = 0;
    
            //Totalsumman för varukorgen
            $scope.totalPrice = 0;
 
-           
+               
+    
+    
+        $scope.addedProducts = JSON.parse(localStorage.getItem("products"));
+        $scope.cart = JSON.parse(localStorage.getItem("products")); 
+        $scope.totalProducts = JSON.parse(localStorage.getItem("totalProducts"));
+        $scope.totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
 
             
 /*********************************************************************************************************************************************************************************   
@@ -27,13 +32,7 @@ app.controller('cartCtrl', ['$scope', '$http', '$location', '$timeout', function
         localStorage.setItem("products", JSON.stringify($scope.addedProducts));         //Vilka produkter som lagts till
         localStorage.setItem("totalPrice", JSON.stringify($scope.totalPrice));          //Totalpriset
     }//Slut funktion spara i localStorage   
-    
-    $scope.saveLocal();
-    
-        $scope.addedProducts = JSON.parse(localStorage.getItem("products"));
-        $scope.cart = JSON.parse(localStorage.getItem("products")); 
-        $scope.totalProducts = JSON.parse(localStorage.getItem("totalProducts"));
-        $scope.totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
+
     
     //Lägga till produkt i varukorgen
     $scope.addInCart = function($id, $name, $price, $url) {
