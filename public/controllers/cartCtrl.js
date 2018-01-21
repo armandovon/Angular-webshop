@@ -16,8 +16,14 @@ app.controller('cartCtrl', ['$scope', '$http', '$location', '$timeout', function
     
     
         $scope.addedProducts = JSON.parse(localStorage.getItem("products"));
-        $scope.cart = JSON.parse(localStorage.getItem("products")); 
-        $scope.totalProducts = JSON.parse(localStorage.getItem("totalProducts"));
+        $scope.cart = JSON.parse(localStorage.getItem("products"));
+        
+        if(localStorage.getItem("totalProducts") == null){
+            $scope.totalProducts = [{sum:0}];
+        }else{
+            $scope.totalProducts = JSON.parse(localStorage.getItem("totalProducts"));
+        }
+        
         $scope.totalPrice = JSON.parse(localStorage.getItem('totalPrice'));
 
             
