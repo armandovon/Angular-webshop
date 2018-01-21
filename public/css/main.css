@@ -134,8 +134,6 @@ figure img {
     margin:0 5px;
 }
 
-
-
 .productImage{
     max-width:110px;
     margin-right:20px;
@@ -151,8 +149,7 @@ figure img {
 .table {
     background-color:white;
     border-radius:5px;
-    width:90%;
-    max-width:220px;
+    width:100%;
 }
 
 .alignCenter{
