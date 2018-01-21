@@ -121,6 +121,13 @@ app.controller('adminController', ['$scope', '$http', 'uploadFile', '$timeout', 
                             url: $scope.path
                         }).success(function(){
                             console.log("Produkt Tillagd..");
+                            
+                            //Hämta produkter
+                            $http.get('/api/products').success(function(data){
+                                
+                                $scope.products = data;                 //Lägger in alla produkter i "products"
+                                $scope.id = $scope.products.length;     //Tar fram det senaste id:t
+                            });//Slut hämta produkter
                         });
 
                 
