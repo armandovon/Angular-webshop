@@ -25,7 +25,7 @@ app.config(function($routeProvider) {
         controller : "adminController"
     }).when("/shipping", {
         templateUrl : "shipping.html",
-        controller : "adminController"
+        controller : "cartCtrl"
     }).when("/checkout", {
         templateUrl : "checkout.html",
         controller : "cartCtrl"
